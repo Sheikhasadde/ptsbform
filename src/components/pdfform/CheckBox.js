@@ -20,18 +20,18 @@ class CheckBox extends React.Component {
     }
 
     render() {
-        const marg = `checkbox-div ${this.props.page4 ? 'mr-1' : 'mr-4'}`;
+        const marg = `checkbox-div ${(this.props.page4 || this.props.reducedMargin) ? 'mr-1' : 'mr-3'}`;
 
         return (
             <div className="d-flex flex-row align-items-center">
-                {this.props.label &&  <label className="mr-1">Yes</label>}
+                {this.props.label &&  <label className="mr-1">YES</label>}
                 <div className={marg} onClick={this.inputChange}>
                     {this.state.check &&
                         <div className="checkbox-div-checked">
                         </div>
                     }
                 </div>
-                {this.props.label &&  <label className="mr-1">No</label>}
+                {this.props.label &&  <label className="mr-1">NO</label>}
 
                 <div className="checkbox-div mr-4" onClick={this.inputChange}>
                     {!this.state.check &&

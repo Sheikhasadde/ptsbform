@@ -1,6 +1,6 @@
 import React from 'react';
 import CheckBox from './CheckBox'
-import "./Style.css";
+
 class Page4 extends React.Component {
 
     constructor(props) {
@@ -44,7 +44,7 @@ class Page4 extends React.Component {
     render() {
         return (
 
-            <div className="container-fluid p-5">
+            <div className="container-fluid p-5 page4">
                 <hr className="divider" />
 
                 <h4 className="text-right color-primary"><span className="font-weight-bold">permanent tsb</span> Mortgage Application
@@ -52,13 +52,14 @@ class Page4 extends React.Component {
                 <hr className="divider-dotted" />
 
                 <div className="d-flex flex-row w-100">
-                    <div className="d-flex flex-column w-50 mr-5">
+                    <div className="d-flex flex-column w-50 mr-4">
                         <h2 className="mt-1 font-weight-bold color-primary mb-2">Direct Marketing, Permanent TSB</h2>
-                        <p>Permanent TSB will use your personal data to identify our products,
-                    services and benefits which we believe may be of interest to you.<br />
-                            Based on your indicated direct marketing preferences below we will
+                        <p className="mb-2">Permanent TSB will use your personal data to identify our products,
+                    services and benefits which we believe may be of interest to you.</p>
+                          <p className="mb-2">  Based on your indicated direct marketing preferences below we will
                             inform you on how you can avail of these products and services using
                     the following methods: </p>
+
                         <div className="">
                             <div className="d-flex flex-row w-100">
 
@@ -99,7 +100,7 @@ class Page4 extends React.Component {
 
                             </div>
 
-                            <div className="d-flex flex-row w-100 align-items-center mt-4">
+                            <div className="d-flex flex-row w-100 align-items-center mt-2">
                                 <div className="w-20 mr-3">
                                     <label>Post</label>
                                 </div>
@@ -193,19 +194,19 @@ class Page4 extends React.Component {
                             <div className="w-50 d-flex flex-row align-items-center">
                                 <label className="mr-2">Applicant 1</label>
                                 <div id="mobConsent1" value={this.state.mobConsent1} onClick={this.checkBoxmobConsent1}>
-                                    <CheckBox check={(e) => { this.toggleCheckbox('mobConsent1') }} page4={true} />
+                                    <CheckBox check={(e) => { this.toggleCheckbox('mobConsent1') }} page4={true} label={true} />
                                 </div>
                             </div>
 
-                            <div className="w-50 d-flex flex-row align-items-center">
+                            <div className="w-50 d-flex flex-row align-items-center mb-1">
                                 <label className="mr-2">Applicant 2</label>
                                 <div id="mobConsent2" value={this.state.mobConsent2} onClick={this.checkBoxmobConsent2}>
-                                    <CheckBox check={(e) => { this.toggleCheckbox('mobConsent2') }} page4={true} />
+                                    <CheckBox check={(e) => { this.toggleCheckbox('mobConsent2') }} page4={true} label={true}/>
                                 </div>
                             </div>
 
                         </div>
-                        <p>If at any time you change your mind and you wish to amend your direct
+                        <p style={{fontSize: '11px'}}>If at any time you change your mind and you wish to amend your direct
                             marketing preferences, you may contact us by writing to FREEPOST
                             F4940, Customer Data Quality (Direct Marketing ), Permanent TSB p.l.c.,
                             56-59 St. Stephen’s Green, Dublin 2, by phone on 1890 500 121 or +353 1
@@ -213,14 +214,14 @@ class Page4 extends React.Component {
                     </div>
 
 
-                    <div className="d-flex flex-column w-50 mr-5">
+                    <div className="d-flex flex-column w-50 mr-4">
                         <h2 className="mt-1 font-weight-bold color-primary mb-2">Direct Marketing, Third Party Products</h2>
-                        <p>Permanent TSB would like to use your personal data to provide you
+                        <p className="mb-2">Permanent TSB would like to use your personal data to provide you<br />
                             with information about products, services or special offers (for example
                             rewards, discounts and cashback programmes) from carefully selected
                             third parties. Permanent TSB will never share your personal data with
-                    these third parties for marketing purposes.<br />
-                            I hereby consent to being contacted for direct marketing of third party
+                    these third parties for marketing purposes.</p>
+                          <p className="mb-2">  I hereby consent to being contacted for direct marketing of third party
                     products and services using the methods selected across:</p>
                         <div className="d-flex flex-row w-100 my-1">
 
@@ -241,7 +242,7 @@ class Page4 extends React.Component {
                             </div>
 
                         </div>
-                        <p>If at any time you change your mind and you wish to amend your direct
+                        <p style={{fontSize: '11.1px'}}>If at any time you change your mind and you wish to amend your direct
                             marketing preferences, you may contact us by writing to FREEPOST
                             F4940, Customer Data Quality (Direct Marketing ), Permanent TSB
                             p.l.c., 56-59 St. Stephen’s Green, Dublin 2, by phone on 1890 500 121 or
@@ -249,15 +250,15 @@ class Page4 extends React.Component {
                     </div>
                 </div>
                 <hr className="divider-dotted" />
-                <h1 className="mb-4 font-light color-primary">Important Notices</h1>
+                <h1 className="mb-4 font-light color-primary" style={{fontSize: '20px'}}>Important Notices</h1>
 
-                <h2 className="mt-1 font-weight-bold color-primary mb-2">Permanent TSB Credit Checking and Reporting</h2>
-                <p>Under the Central Bank’s Consumer Protection Code we are not permitted to offer you a credit product that you
+                <h2 className="mt-1 font-weight-bold color-primary mb-2" style={{fontSize: '16px'}} >Permanent TSB Credit Checking and Reporting</h2>
+                <p className="mb-2">Under the Central Bank’s Consumer Protection Code we are not permitted to offer you a credit product that you
                     cannot afford. Therefore, in
                     advance, of granting you a credit product of any type, we will check your credit rating against the Central
                     Credit Register and the Irish Credit
             Bureau. This information supports a full and accurate assessment of your ability to repay.</p>
-                <p>In addition, we are required by law to ensure that the Central Credit Register is kept up to date and we
+                <p className="mb-2">In addition, we are required by law to ensure that the Central Credit Register is kept up to date and we
                     report personal and credit information
                     to the Central Credit Register. We also report credit facilities to the Irish Credit Bureau (“ICB”) in the
                     legitimate interests of the Bank and the
@@ -265,38 +266,38 @@ class Page4 extends React.Component {
                     Processing Notice.pdf for details of how the
                     ICB will process your personal data, and how you may exercise your rights in respect of your personal data
             held by the ICB.</p>
-                <p>Further information in relation to our disclosure of your personal data to the Central Credit Register and
+                <p className="mb-3">Further information in relation to our disclosure of your personal data to the Central Credit Register and
                     the ICB can be found in our Data
             Protection Notice.</p>
-                <h2 className="mt-1 font-weight-bold color-primary mb-2">Using your personal data</h2>
-                <p>In providing personal banking services to you, we need to process personal data about you. This involves
+                <h2 className="mt-1 font-weight-bold color-primary mb-2" style={{fontSize: '16px'}}>Using your personal data</h2>
+                <p className="mb-2">In providing personal banking services to you, we need to process personal data about you. This involves
                     asking you for specific personal
                     data, processing this personal data and storing it for a period of time. An explanation of how your personal
                     data is used in the provision of our
                     services to you, our running of the bank and your rights in relation to your personal data is provided in
                     the summary Data Protection Notice
             included with this pack. </p>
-                <p>If you would like a copy of the full Data Protection Notice, please ask a branch staff member, call Open24 on
+                <p className="mb-3">If you would like a copy of the full Data Protection Notice, please ask a branch staff member, call Open24 on
                     1890 500 121 or view it at
             www.permanenttsb.ie</p>
-                <h2 className="mt-1 font-weight-bold color-primary mb-2">Sharing Information with your Broker / Intermediary</h2>
+                <h2 className="mt-1 font-weight-bold color-primary mb-2" style={{fontSize: '16px'}}>Sharing Information with your Broker / Intermediary</h2>
 
-                <p>Permanent TSB will require your consent if you wish Permanent TSB to share personal data in relation to your
+                <p className="mb-2"  style={{fontSize: '11.8px'}}>Permanent TSB will require your consent if you wish Permanent TSB to share personal data in relation to your
                     mortgage with your authorised
                     intermediary. Such information may include interest rate changes, loan completion date or redemption amounts
                     (where you have requested
             this information). Permanent TSB will not share information relating to the conduct of your mortgage. </p>
-                <p>I/We hereby consent to Permanent TSB sharing my/our personal information (as described above) in relation to
+                <p className="mb-2">I/We hereby consent to Permanent TSB sharing my/our personal information (as described above) in relation to
                     this mortgage with my/our
             mortgage intermediary</p>
 
-                <div className="d-flex flex-row w-75 justify-content-between">
-                    <div className="w-60 d-flex flex-row justify-content-between">
-                        <label >Signature of first applicant:</label>
-                        <input type="text" className="primary-input form-control w-50" />
+            <div className="d-flex flex-row w-80 justify-content-between mt-2">
+                    <div className="w-70 d-flex flex-row justify-content-between align-items-center">
+                        <label className="w-40" style={{fontSize: '12px'}}>Signature of first applicant:</label>
+                        <input type="text" className="primary-input form-control w-60" />
                     </div>
-                    <div className="d-flex flex-row w-25 align-items-center`">
-                        <label className="mr-2">Date:</label>
+                    <div className="d-flex flex-row w-25 align-items-center">
+                        <label className="mr-2" style={{fontSize: '12px'}}>Date:</label>
                         {this.getSplitInput(2, 'date')}
                         <p className="mr-1">/</p>
                         {this.getSplitInput(2, 'date')}
@@ -305,13 +306,13 @@ class Page4 extends React.Component {
                     </div>
                 </div>
 
-                <div className="d-flex flex-row w-75 justify-content-between mt-3">
-                    <div className="w-60 d-flex flex-row justify-content-between">
-                        <label >Signature of second applicant:</label>
-                        <input type="text" className="primary-input form-control w-50" />
+                <div className="d-flex flex-row w-80 justify-content-between mt-3">
+                    <div className="w-70 d-flex flex-row justify-content-between">
+                        <label className="w-40" style={{fontSize: '12px'}}>Signature of second applicant:</label>
+                        <input type="text" className="primary-input form-control w-60" />
                     </div>
                     <div className="d-flex flex-row w-25 align-items-center">
-                        <label className="mr-2">Date:</label>
+                        <label className="mr-2" style={{fontSize: '12px'}}>Date:</label>
                         {this.getSplitInput(2, 'date')}
                         <p className="mr-1">/</p>
                         {this.getSplitInput(2, 'date')}
@@ -319,13 +320,13 @@ class Page4 extends React.Component {
                         {this.getSplitInput(2, 'date')}
                     </div>
                 </div>
-                <br />
-                <p><strong>Please note:</strong> You may withdraw your consent at any time. Your consent to share this
+
+                <p className="mt-2"><strong>Please note:</strong> You may withdraw your consent at any time. Your consent to share this
                     personal
                     information is not required for the application
             of this mortgage product.</p>
 
-                <p className="text-right mt-5">BMK3069 (Rev07/18)</p>
+                <p className="text-right mt-0"  style={{fontSize: '9px'}}>BMK3069 (Rev07/18)</p>
             </div>
 
         );

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import CheckBox from './CheckBox';
-import "./Style.css";
 
 class Page2 extends React.Component {
 
@@ -89,55 +88,55 @@ class Page2 extends React.Component {
                 <div className="d-flex flex-column">
 
                     <div className="d-flex flex-row justify-content-between align-items-center">
-                        <div className="w-50"></div>
-                        <div className="w-50 d-flex justify-content-end">
+                        <div className="w-60"></div>
+                        <div className="w-40 d-flex justify-content-end">
                             <div className="input-group mb-3 radio-group d-flex justify-content-end mr-3">
                                 <label className="mr-4">Yes</label>
-                                <label className="mr-4">No</label>
+                                <label className="mr-3">No</label>
                             </div>
                         </div>
                     </div>
 
                     <div className="d-flex flex-row justify-content-between align-items-center">
-                        <div className="w-50">
+                        <div className="w-60">
                             <label>a) Do you or your spouse / partner have any savings or shares in a Credit Union?</label>
                         </div>
-                        <div className="w-50 d-flex justify-content-end">
+                        <div className="w-40 d-flex justify-content-end">
                             <div id="checkSavings" value={this.state.checkSavings} onClick={this.checkBoxSavings}>
                                 <CheckBox check={(e) => { this.toggleCheckbox('checkSavings') }} />
                             </div>
                         </div>
                     </div>
 
-                    <div className="d-flex flex-row justify-content-between align-items-center">
-                        <div className="w-50">
+                    <div className="d-flex flex-row justify-content-between align-items-center mt-1">
+                        <div className="w-60">
                             <label>b) Do you or your spouse / partner currently hold loan account(s) in a Credit Union?</label>
                         </div>
-                        <div className="w-50 d-flex justify-content-end">
+                        <div className="w-40 d-flex justify-content-end">
                             <div id="checkLoan" value={this.state.checkLoan} onClick={this.checkBoxLoan}>
                                 <CheckBox check={(e) => { this.toggleCheckbox('checkLoan') }} />
                             </div>
                         </div>
                     </div>
 
-                    <div className="d-flex flex-row justify-content-between align-items-center">
-                        <div className="w-50">
+                    <div className="d-flex flex-row justify-content-between align-items-center mt-1">
+                        <div className="w-60">
                             <label>c) Have you or your spouse / partner previously held loan account(s) with a Credit
                         Union?</label>
                         </div>
-                        <div className="w-50 d-flex justify-content-end">
+                        <div className="w-40 d-flex justify-content-end">
                             <div id="checkPrevLoan" value={this.state.checkPrevLoan} onClick={this.checkBoxPrevLoan}>
                                 <CheckBox check={(e) => { this.toggleCheckbox('checkPreviousLoan') }} />
                             </div>
                         </div>
                     </div>
 
-                    <div className="d-flex flex-row justify-content-between align-items-center">
-                        <div className="w-50">
-                            <label>d) Do you or your spouse / partner have any other Non-Bank repayment commitments?
-                        (for example - Occupational Loan Scheme, Money Lender, Family Member</label>
+                    <div className="d-flex flex-row justify-content-between align-items-center mt-1">
+                        <div className="w-60">
+                            <label>d) Do you or your spouse / partner have any other Non-Bank repayment commitments? <br />
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;(for example - Occupational Loan Scheme, Money Lender, Family Member</span></label>
                         </div>
-                        <div className="w-50 d-flex justify-content-end">
+                        <div className="w-40 d-flex justify-content-end mt-n2">
                             <div id="checkOtherCommit" value={this.state.checkOthercommit} onClick={this.checkBoxOtherCommit}>
                                 <CheckBox check={(e) => { this.toggleCheckbox('checkOtherCommit') }} />
                             </div>
@@ -146,69 +145,150 @@ class Page2 extends React.Component {
 
                 </div>
 
-                <p>Note : If the answer to any of (a) to (d) above if “Yes” , please provide full details of each facility in
+                <p className="mt-1">Note : If the answer to any of (a) to (d) above if “Yes” , please provide full details of each facility in
             the box provided below.</p>
 
-                <table className="table table-bordered table-sm">
+                <table className="table-sm">
                     <tbody>
-                        <tr>
-                            <th>Name of Credit Union / Other Lender</th>
-                            <th>Savings Balance</th>
-                            <th>Loan Balance</th>
+                        <tr className="border-1">
+                            <th className="border-right-1">Name of Credit Union / Other Lender</th>
+                            <th className="border-right-1">Savings Balance</th>
+                            <th className="border-right-1">Loan Balance</th>
                             <th>Monthly Commitment</th>
                         </tr>
 
-                        <tr>
-                            <td>
-                                <input type="text" name="" onChange={(e) => {
-                                    this.inputChange(e, 'O')
-                                }} value={this.state['creditCommitments']['loanOrOverdraftCosts'][0]['lenderName']} />
+                        <tr className="border-left-1 border-right-1 border-bottom-1">
+                            <td className="border-right-1">
+                                <div className="input-group">
+                                    <input type="text" className="form-control primary-input border-0" onChange={(e) => {
+                                        this.inputChange(e, 'O')
+                                    }} value={this.state['creditCommitments']['loanOrOverdraftCosts'][0]['lenderName']} />
+                                </div>
                             </td>
-                            <td>
-                                <input type="text" name="" onChange={(e) => {
-                                    this.inputChange(e, '0')
-                                }} value={this.state['savingsAccounts'][0]['currentBal']} />
+
+                            <td className="border-right-1">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text primary-input border-0 input-placeholder">€</span>
+                                    </div>
+                                    <input type="text" className="form-control primary-input border-0" value={this.state['savingsAccounts'][0]['currentBal']} onChange={(e) => {
+                                        this.inputChange(e, '0')
+                                    }} />
+                                </div>
                             </td>
-                            <td>
-                                <input type="text" name="" onChange={(e) => {
-                                    this.inputChange(e, '0')
-                                }} value={this.state['creditCommitments']['loanOrOverdraftCosts'][0]['maxOutstandingBal']} />
+
+
+                            <td className="border-right-1">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text primary-input border-0 input-placeholder">€</span>
+                                    </div>
+                                    <input type="text" className="form-control primary-input border-0" value={this.state['creditCommitments']['loanOrOverdraftCosts'][0]['maxOutstandingBal']} onChange={(e) => {
+                                        this.inputChange(e, '0')
+                                    }} />
+                                </div>
                             </td>
+
                             <td>
-                                <input type="text" name="" onChange={(e) => {
-                                    this.inputChange(e, 's')
-                                }} value={this.state['creditCommitments']['loanOrOverdraftCosts'][0]['monthlyRepayments']} />
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text primary-input border-0 input-placeholder">€</span>
+                                    </div>
+                                    <input type="text" className="form-control primary-input border-0" value={this.state['creditCommitments']['loanOrOverdraftCosts'][0]['monthlyRepayments']} onChange={(e) => {
+                                        this.inputChange(e, '0')
+                                    }} />
+                                </div>
                             </td>
                         </tr>
 
-                        <tr>
-                            <td>
-                                <input type="text" name="" onChange={(e) => {
-                                    this.inputChange(e, 1)
-                                }} />
+                        <tr className="border-left-1 border-right-1 border-bottom-1">
+                            <td className="border-right-1">
+                                <div className="input-group">
+                                    <input type="text" className="form-control primary-input border-0" onChange={(e) => {
+                                        this.inputChange(e, 'O')
+                                    }} value={this.state['creditCommitments']['loanOrOverdraftCosts'][1]['lenderName']} />
+                                </div>
                             </td>
-                            <td>
-                                <input type="text" name="" onChange={(e) => {
-                                    this.inputChange(e, 1)
-                                }} />
+
+                            <td className="border-right-1">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text primary-input border-0 input-placeholder">€</span>
+                                    </div>
+                                    <input type="text" className="form-control primary-input border-0" value={this.state['savingsAccounts'][1]['currentBal']} onChange={(e) => {
+                                        this.inputChange(e, '0')
+                                    }} />
+                                </div>
                             </td>
-                            <td>
-                                <input type="text" name="" onChange={(e) => {
-                                    this.inputChange(e, 1)
-                                }} />
+
+
+                            <td className="border-right-1">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text primary-input border-0 input-placeholder">€</span>
+                                    </div>
+                                    <input type="text" className="form-control primary-input border-0" value={this.state['creditCommitments']['loanOrOverdraftCosts'][1]['maxOutstandingBal']} onChange={(e) => {
+                                        this.inputChange(e, '0')
+                                    }} />
+                                </div>
                             </td>
+
                             <td>
-                                <input type="text" name="" onChange={(e) => {
-                                    this.inputChange(e, 1)
-                                }} />
+
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text primary-input border-0 input-placeholder">€</span>
+                                    </div>
+                                    <input type="text" className="form-control primary-input border-0" value={this.state['creditCommitments']['loanOrOverdraftCosts'][1]['monthlyRepayments']} onChange={(e) => {
+                                        this.inputChange(e, '0')
+                                    }} />
+                                </div>
                             </td>
                         </tr>
 
-                        <tr>
-                            <td><input type="text" name="" /></td>
-                            <td><input type="text" name="" /></td>
-                            <td><input type="text" name="" /></td>
-                            <td><input type="text" name="" /></td>
+                        <tr className="border-left-1 border-right-1 border-bottom-1">
+                            <td className="border-right-1">
+                                <div className="input-group">
+                                    <input type="text" className="form-control primary-input border-0" onChange={(e) => {
+                                        this.inputChange(e, 'O')
+                                    }} value={this.state['creditCommitments']['loanOrOverdraftCosts'][1]['lenderName']} />
+                                </div>
+                            </td>
+
+                            <td className="border-right-1">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text primary-input border-0 input-placeholder">€</span>
+                                    </div>
+                                    <input type="text" className="form-control primary-input border-0" value={this.state['savingsAccounts'][0]['currentBal']} onChange={(e) => {
+                                        this.inputChange(e, '0')
+                                    }} />
+                                </div>
+                            </td>
+
+
+                            <td className="border-right-1">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text primary-input border-0 input-placeholder">€</span>
+                                    </div>
+                                    <input type="text" className="form-control primary-input border-0" value={this.state['creditCommitments']['loanOrOverdraftCosts'][0]['maxOutstandingBal']} onChange={(e) => {
+                                        this.inputChange(e, '0')
+                                    }} />
+                                </div>
+                            </td>
+
+                            <td>
+
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text primary-input border-0 input-placeholder">€</span>
+                                    </div>
+                                    <input type="text" className="form-control primary-input border-0" value={this.state['creditCommitments']['loanOrOverdraftCosts'][0]['monthlyRepayments']} onChange={(e) => {
+                                        this.inputChange(e, '0')
+                                    }} />
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -216,15 +296,15 @@ class Page2 extends React.Component {
 
                 <h2 className="mt-2 font-weight-bold color-primary">Known Future Changes in your Circumstances</h2>
 
-                <div className="d-flex flex-row ">
-                    <p className="w-60">
+                <div className="d-flex flex-row align-items-center">
+                    <p className="w-90">
                         Are you aware of any possible changes to your future circumstances that may affect your ability to meet
                         your repayments on this facility?
                     </p>
 
-                    <div className="justify-content-end w-40 d-flex flex-row">
+                    <div className="justify-content-end w-10 d-flex flex-row pl-2">
                         <div id="checkFuture" value={this.state.checkFuture} onClick={this.checkBoxFuture}>
-                            <CheckBox check={(e) => { this.toggleCheckbox('checkFuture') }} />
+                            <CheckBox label="true" reducedMargin="true" check={(e) => { this.toggleCheckbox('checkFuture') }} />
                         </div>
                     </div>
                 </div>
@@ -238,8 +318,8 @@ class Page2 extends React.Component {
                 <h2 className="mt-2 font-weight-bold color-primary">Customer Consent - Special Category Data - Health Related
             Information (If Provided) </h2>
 
-                <p>I/We have provided specific health-related information in the form above which I/We feel is relevant to the
-            application for this product. </p>
+                <p>I/We have provided specific health-related information in the form above which <u>I/We feel is relevant to the
+            application for this product.</u> </p>
                 <p>I/We understand that Permanent TSB will only use this information in the decision process for my/our mortgage
         </p>
 
@@ -249,10 +329,10 @@ class Page2 extends React.Component {
                 <p>I/We hereby consent to Permanent TSB using my/our personal health information in the decision process.</p>
 
 
-                <div className="d-flex flex-row w-75 justify-content-between mt-3">
-                    <div className="w-60 d-flex flex-row justify-content-between align-items-center">
-                        <label >Signature of first applicant:</label>
-                        <input type="text" className="primary-input form-control w-50" />
+                <div className="d-flex flex-row w-80 justify-content-between mt-3">
+                    <div className="w-70 d-flex flex-row justify-content-between align-items-center">
+                        <label className="w-40">Signature of first applicant:</label>
+                        <input type="text" className="primary-input form-control w-60" />
                     </div>
                     <div className="d-flex flex-row w-25 align-items-center">
                         <label className="mr-2">Date:</label>
@@ -264,10 +344,10 @@ class Page2 extends React.Component {
                     </div>
                 </div>
 
-                <div className="d-flex flex-row w-75 justify-content-between mt-3">
-                    <div className="w-60 d-flex flex-row justify-content-between align-items-center">
-                        <label >Signature of second applicant:</label>
-                        <input type="text" className="primary-input form-control w-50" />
+                <div className="d-flex flex-row w-80 justify-content-between mt-3">
+                    <div className="w-70 d-flex flex-row justify-content-between align-items-center">
+                        <label className="w-40">Signature of second applicant:</label>
+                        <input type="text" className="primary-input form-control w-60" />
                     </div>
                     <div className="d-flex flex-row w-25 align-items-center">
                         <label className="mr-2">Date:</label>
@@ -279,7 +359,7 @@ class Page2 extends React.Component {
                     </div>
                 </div>
 
-                <h3 className="font-weight-bold mt-3"><i>* Only applicable where health-related personal data is disclosed.*</i>
+                <h3 className="font-weight-bold mt-3"><i className="special-note">* Only applicable where health-related personal data is disclosed.*</i>
                 </h3>
 
                 <h2 className="mt-2 font-weight-bold color-primary">Consent under the Consumer Credit Act 1995</h2>
@@ -291,16 +371,16 @@ class Page2 extends React.Component {
                     contact you during working hours in connection with the Account. Should you wish to give your consent you
             should sign this part.</p>
 
-                <p>I/we hereby consent to permanent tsb contacting me/us by telephone at my/our place of employment/business.
+                <p className="mt-1">I/we hereby consent to permanent tsb contacting me/us by telephone at my/our place of employment/business.
         </p>
 
-                <div className="d-flex flex-row w-75 justify-content-between mt-3">
-                    <div className="w-60 d-flex flex-row justify-content-between align-items-center">
-                        <label >Signature of first applicant:</label>
-                        <input type="text" className="primary-input form-control w-50" />
+                <div className="d-flex flex-row w-80 justify-content-between mt-3">
+                    <div className="w-70 d-flex flex-row justify-content-between align-items-center">
+                        <label className="w-40" style={{fontSize: '12px'}}>Signature of first applicant:</label>
+                        <input type="text" className="primary-input form-control w-60" />
                     </div>
                     <div className="d-flex flex-row w-25 align-items-center">
-                        <label className="mr-2">Date:</label>
+                        <label className="mr-2" style={{fontSize: '12px'}}>Date:</label>
                         {this.getSplitInput(2, 'date')}
                         <p className="mr-1">/</p>
                         {this.getSplitInput(2, 'date')}
@@ -309,13 +389,13 @@ class Page2 extends React.Component {
                     </div>
                 </div>
 
-                <div className="d-flex flex-row w-75 justify-content-between mt-3">
-                    <div className="w-60 d-flex flex-row justify-content-between">
-                        <label >Signature of second applicant:</label>
-                        <input type="text" className="primary-input form-control w-50" />
+                <div className="d-flex flex-row w-80 justify-content-between mt-3">
+                    <div className="w-70 d-flex flex-row justify-content-between">
+                        <label className="w-40" style={{fontSize: '12px'}}>Signature of second applicant:</label>
+                        <input type="text" className="primary-input form-control w-60" />
                     </div>
                     <div className="d-flex flex-row w-25 align-items-center">
-                        <label className="mr-2">Date:</label>
+                        <label className="mr-2" style={{fontSize: '12px'}}>Date:</label>
                         {this.getSplitInput(2, 'date')}
                         <p className="mr-1">/</p>
                         {this.getSplitInput(2, 'date')}

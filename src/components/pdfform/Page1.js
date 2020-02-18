@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-import "./Style.css";
 
 class Page1 extends React.Component {
   constructor(props) {
@@ -66,7 +65,9 @@ class Page1 extends React.Component {
       <div className="container-fluid p-5">
         <div className="d-flex flex-row w-100">
           <div className="w-60 mt-5">
-            <h1 className="color-primary">Mortgage Application for Credit</h1>
+            <h1 className="color-primary headings">
+              Mortgage Application for Credit
+            </h1>
             <hr className="divider" />
           </div>
           <div className="w-40 d-flex justify-content-end">
@@ -74,10 +75,10 @@ class Page1 extends React.Component {
           </div>
         </div>
 
-        <p>
+        <p style={{ fontSize: "12px" }} className="mb-3">
           Intermediary Mortgage Centre, permanent tsb Corporate Centre, Third
           floor, <br />
-          Carysfort Avenue, Blackrock, Co Dublin
+          Carysfort Avenue, Blackrock, Co Dublin.
         </p>
 
         <div className="d-flex flex-row w-75 justify-content-between align-items-center">
@@ -174,7 +175,7 @@ class Page1 extends React.Component {
               <label>Purchase price/value of property:</label>
             </div>
             <div className="w-60">
-              <div className="input-group mb-3">
+              <div className="input-group mb-1">
                 <div className="input-group-prepend">
                   <span className="input-group-text primary-input no-right-border input-placeholder">
                     €
@@ -211,7 +212,7 @@ class Page1 extends React.Component {
               <label>Amount of loan required:</label>
             </div>
             <div className="w-60">
-              <div className="input-group mb-3">
+              <div className="input-group mb-1">
                 <div className="input-group-prepend">
                   <span className="input-group-text primary-input no-right-border input-placeholder">
                     €
@@ -245,7 +246,7 @@ class Page1 extends React.Component {
         </div>
 
         <h2 className="mt-3 font-weight-bold color-primary">Valuation</h2>
-        <p>
+        <p style={{ fontSize: "12px" }}>
           permanent tsb will require a valuation of and certain other
           information about the property you wish to buy and/or mortgage. The
           valuation report, of which you will obtain a copy, is designed
@@ -261,9 +262,9 @@ class Page1 extends React.Component {
           obtain a more comprehensive report or structural survey.
         </p>
 
-        <h2 className="mt-3 font-weight-bold color-primary">Insurance</h2>
+        <h2 className="mt-3 font-weight-bold color-primary mb-2">Insurance</h2>
         <h4 className="font-weight-bold">Life Assurance</h4>
-        <p>
+        <p className="mb-2" style={{ fontSize: "11.8px" }}>
           It is a condition on all repayment loans that Mortgage Protection
           Cover is effected before the loan cheque issues, permanent tsb can
           arrange this and the premiums may be incorporated in the monthly
@@ -274,26 +275,34 @@ class Page1 extends React.Component {
         </p>
 
         <h4 className="font-weight-bold">Property Insurance</h4>
-        <p>
-          It is a condition on all loans that property insurance is effected
-          before the loan cheque issues. permanent tsb can arrange this and the
-          premiums may be incorporated in the monthly repayments for the
-          duration of the loan. Borrowers have the right to effect and maintain
-          such insurance as is required by permanent tsb with any recognised
-          insurer or through any authorised agency of their choice. If you wish
-          to exercise this right, you must notify permanent tsb on acceptance of
-          a loan offer (if any) and on receipt of said notification permanent
-          tsb shall inform you of its detailed insurance requirements. The loan
-          will not be issued until permanent tsb’s insurance requirements have
-          been complied with to permanent tsb’s reasonable satisfaction. Where
-          the borrower ceases to maintain adequate insurance cover for the
-          property at any time during the period of the loan agreement,
-          permanent tsb may insure the property through its agency for not less
-          than the estimated cost of reinstatement. The borrower will be liable
-          for the premium monthly / annually for the duration of the loan.
+        <p style={{ fontSize: "11.8px" }}>
+          <span style={{ fontSize: "10px" }}>
+            It is a condition on all loans
+          </span>
+          that property insurance is effected before the loan cheque issues.
+          permanent tsb can arrange this and the premiums may be incorporated in
+          the monthly repayments for the duration of the loan. Borrowers have
+          the right to effect and maintain such insurance as is required by
+          permanent tsb with any recognised insurer or through any authorised
+          agency of their choice. If you wish to exercise this right, you must
+          notify permanent tsb on acceptance of a loan offer (if any) and on
+          receipt of said notification permanent tsb shall inform you of its
+          detailed insurance requirements. The loan will not be issued until
+          permanent tsb’s insurance requirements
+          <span style={{ fontSize: "10.3px" }}>
+            have been complied with to permanent tsb’s reasonable satisfaction.
+            Where the borrower ceases to maintain adequate insurance cover for
+            the property at any time during the period of the loan agreement,
+            permanent tsb may insure the property through its agency for not
+            less than the estimated cost of reinstatement. The borrower will be
+            liable for the premium monthly / annually for the duration of the
+            loan.
+          </span>
         </p>
 
-        <p className="text-right mt-2">BMK3069 (Rev07/18)</p>
+        <p className="text-right mt-2" style={{ fontSize: "9px" }}>
+          BMK3069 (Rev07/18)
+        </p>
       </div>
     );
   }
