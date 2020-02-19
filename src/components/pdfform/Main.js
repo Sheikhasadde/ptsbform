@@ -23,7 +23,7 @@ class Main extends React.Component {
 
   getData() {
     fetch(
-      "https://switchroo.herokuapp.com/detailsYouNeed/getDetails/5e2ebb8386db75224499f30e"
+      "https://switchroo.herokuapp.com/detailsYouNeed/getDetails/5e1cad6962b8dc001761e3cd"
     )
       .then(response => response.json())
       .then(responseJson => {
