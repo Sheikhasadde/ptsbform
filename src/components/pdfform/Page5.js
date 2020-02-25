@@ -1,15 +1,27 @@
-import React from 'react';
+import React from "react";
+import page5_1 from "../../assets/p5_1.png";
+import page5_2 from "../../assets/p5_2.png";
+import page5_3 from "../../assets/p5_3.png";
+import page5_4 from "../../assets/p5_4.png";
 
 function Page5() {
-    return (
-        <div className="container-fluid p-5 page5">
-            <hr className="divider" />
-            <h4 className="text-right color-primary"><span className="font-weight-bold">permanent tsb</span> Mortgage Application
-            for Credit</h4>
-            <hr className="divider-dotted" />
+  return (
+    <div className="container-fluid p-5 page5">
+      <hr className="divider" />
 
+      <h4 className="text-right color-primary header">
+        <span className="font-weight-bold ">permanent tsb</span> Mortgage
+        Application for Credit
+      </h4>
+      <hr className="divider-dotted" />
+      <img src={page5_1} width="700"></img>
+      <img src={page5_2} width="700"></img>
+      <img src={page5_3} width="700"></img>
+      <img src={page5_4} width="700"></img>
+      <p className="text-right mt-5" style={{fontSize: '9px', position:'relative', bottom: '50px'}}>BMK3069 (Rev07/18)</p>
 
-            <div className="d-flex flex-row w-100 mt-3">
+      {/* 
+            <div className="d-flex flex-row w-100 mt-5">
                 <div className="d-flex flex-column w-50 mt-5 mr-5">
 
                     <h2 className="font-weight-bold color-primary mb-2" style={{fontSize: '16px'}}>Important regulatory information concerning
@@ -43,14 +55,14 @@ function Page5() {
                     <p className="mb-2" style={{fontSize: '10px'}}>“M” is the fixed Rate Period (in months) and,</p>
                     <p className="mb-2" style={{fontSize: '10px'}}>“T” is the time expired of the Fixed Rate Period at the date of Early Termination
                     (in months).</p>
-                    <p className="mb-2" style={{fontSize: '10px'}}>Here is a worked example; “I” = 5%, “S” = 3%, “R” = €100,000, “M” = 24
+                    <p className="mb-2" style={{fontSize: '10px'}}>Here is a worked example; “I” = 5%, “S” = 5%, “R” = €100,000, “M” = 24
                     months, “T” = 12 months.</p>
-                    <p className="mb-2" style={{fontSize: '10px'}}>C = (5%-3%) x €100,000 x (24-12) / 12</p>
+                    <p className="mb-2" style={{fontSize: '10px'}}>C = (5%-5%) x €100,000 x (24-12) / 12</p>
                     <p className="mb-2" style={{fontSize: '10px'}}>So, C = 2% x €100,000 x 12 / 12</p>
                     <p className="mb-2" style={{fontSize: '10px'}}>C = €2,000</p>
                     <p className="font-weight-bold mb-2" style={{fontSize: '10px'}}>Valuation</p>
                     <p className="mb-2" style={{fontSize: '10px'}}>A valuation must be carried out on the property you intend buying and a
-                        valuation fee must be paid. The maximum valuation fee is e130 which includes
+                        valuation fee must be paid. The maximum valuation fee is e150 which includes
                         VAT but excludes valuer’s travel expenses. The valuer’s travel expenses are:
                         1-10 miles = Nil; 11-20 miles = 6; 21-25 miles = 8. Properties incomplete at
                         the time of the original valuation will require, on completion, a final valuation,
@@ -64,7 +76,7 @@ function Page5() {
                         professional fees and property registration fees applicable with yours. A bank
                         solicitor is required, for all Resident and Non-Resident Buy-to-Let mortgages,
                         for loan amounts greater than €75,000. The amount payable, for a standard
-                        Buy-to-Let mortgage, is €1,000 plus 23% VAT and outlay. This amount is
+                        Buy-to-Let mortgage, is €1,000 plus 25% VAT and outlay. This amount is
                         payable by the Borrower(s) and must be paid directly to the banks solicitor
                         prior to the release of the loan cheque. The amount payable by the Borrower(s)
                     is in addition to the borrower(s) solicitor fees.’</p>
@@ -79,7 +91,7 @@ function Page5() {
                         are also required. Subject to current lending criteria and terms and conditions.
                         Please note that if you require your Solicitor to take up your title deeds on
                         Accountable Trust Receipt in the future (unless you are taking out a new
-                        mortgage with permanent tsb) there is a fee of €35. There is also a fee of €35
+                        mortgage with permanent tsb) there is a fee of €55. There is also a fee of €55
                     for vacating or releasing your mortgage.</p>
                     <p className="font-weight-bold mb-2"style={{fontSize: '10px'}}>Arrears</p>
                     <p className="mb-2" style={{fontSize: '10px'}}>Arrears are any element of a mortgage repayment that have not been made
@@ -100,7 +112,7 @@ function Page5() {
                     MAY INCREASE.</h2>
                     <h2 className="font-weight-bold" style={{fontSize: '12px', lineHeight:'15px'}}>WARNING: THE PAYMENT RATES ON THIS HOUSING LOAN<br/>
                     MAY BE ADJUSTED BY THE LENDER FROM TIME TO TIME.</h2>
-                    <h2 className="font-weight-bold black-box" style={{fontSize: '12px', lineHeight:'15px'}}>NOTICE: UNDER THE CREDIT REPORTING ACT 2013
+                    <h2 className="font-weight-bold black-box" style={{fontSize: '12px', lineHeight:'15px'}}>NOTICE: UNDER THE CREDIT REPORTING ACT 2015
                         LENDERS ARE REQUIRED TO PROVIDE PERSONAL AND
                         CREDIT INFORMATION FOR CREDIT APPLICATIONS<br/>
                         AND CREDIT AGREEMENTS OF €500 AND ABOVE TO <br/>
@@ -116,11 +128,9 @@ function Page5() {
                 </div>
 
             </div>
-            <p className="text-right mt-n4" style={{fontSize: '9px'}}>BMK3069 (Rev07/18)</p>
-
-        </div>
-
-    );
+            */}
+    </div>
+  );
 }
 
 export default Page5;
